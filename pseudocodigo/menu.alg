@@ -1,12 +1,12 @@
 Algoritmo "Atividade-modulo-2"
 // Disciplina   : [Lógica de Programação]
-// Professor   : Artur Brandt 
+// Professor   : Artur Brandt
 // Descrição   : Criar um menu interativo para uma agência de viagens
 // Autor(a)    : Carlos Wallace Pereira
 // Data atual  : 02/07/2022
+
 Var
 // Seção de Declarações das variáveis 
-
 opcaoMenuIniciar : inteiro
 numeroCliente: inteiro
 numeroDestino : inteiro
@@ -16,6 +16,39 @@ vCliente : vetor [1..10,1..6] de caracter
 vDestino : vetor [1..10,1..7] de caracter
 
 //Funções
+funcao mostraMenu : caracter
+inicio
+   escreval("Digite a opção desejada no menu abaixo para que possamos te ajudar.")
+   escreval()
+   escreval("Digite 1 para Cadastrar novo CLIENTE")
+   escreval("Digite 2 para Cadastrar novo DESTINO")
+   escreval("Digite 3 para Consultar base de CLIENTES")
+   escreval("Digite 4 para Consultar base de DESTINOS")
+   escreval("Digite 5 para SAIR e fechar o programa")
+   escreval()
+   escreva("Digite a opção escolhida: ")
+   leia(opcaoMenuIniciar)
+   escreval()
+
+   escolha opcaoMenuIniciar
+   caso 1
+      escreval(registraCliente)
+   caso 2
+      escreval(registraDestino)
+   caso 3
+      escreval("No momento indisponível.")
+      escreval(mostraMenu)
+   caso 4
+      escreval("No momento indisponível.")
+      escreval(mostraMenu)
+   caso 5
+      escreval("Obrigado pela visita. Até logo!")
+   outrocaso
+      escreval("Opção inválida.")
+      escreval(mostraMenu)
+   fimescolha
+fimfuncao
+
 funcao registraCliente : caracter
 var
 // Dados do cliente
@@ -51,9 +84,8 @@ inicio
    escreval ("O código do cadastro de ", nomeCliente, " é: ", idCliente, "!")
    escreval ("Obrigado! ")
    escreval()
-   escreval(mostraMenu)
+   escreval(menuContinuar)
 fimfuncao
-
 
 funcao registraDestino : caracter
 var
@@ -65,7 +97,6 @@ var
    precoDestino : caracter
    descontoDestino : caracter
    periodoDestino : caracter
-
 inicio
    escreval("Por favor, digite os dados do destino")
    escreva("Nome: ")
@@ -95,41 +126,54 @@ inicio
    escreval ("O código do cadastro de ", nomeDestino, " é: ", idDestino, "!")
    escreval ("Obrigado! ")
    escreval()
-   escreval(mostraMenu)
+   escreval(menuContinuar)
 fimfuncao
 
-
-funcao mostraMenu : caracter
+funcao menuContinuar : caracter
+var
+   opcaoMenuContinuar : inteiro
 inicio
-   escreval("Digite a opção desejada no menu abaixo para que possamos te ajudar.")
+   escreval("O que você gostaria de fazer?")
    escreval()
-   escreval("Digite 1 para Cadastro de clientes")
-   escreval("Digite 2 para Cadastro de destino")
-   escreval("Digite 3 para Consulta")
+   escolha opcaoMenuIniciar
+   caso 1
+        escreval ("Digite 1 para registrar outro CLIENTE")
+   caso 2
+        escreval ("Digite 1 para registrar outro DESTINO")
+   outrocaso
+   //Não tem outro caso.
+   fimescolha
+   
+   escreval("Digite 2 para VOLTAR ao menu principal")
+   escreval("Digite 3 para SAIR e fechar o programa")
    escreval()
    escreva("Digite a opção escolhida: ")
-   leia(opcaoMenuIniciar)
+   leia(opcaoMenuContinuar)
    escreval()
-
-   se (opcaoMenuIniciar = 1) entao
-      escreval(registraCliente)
-   senao
-         se (opcaoMenuIniciar = 2) entao
-            escreval(registraDestino)
-         senao
-   senaoescreval("Opção inválida.")
+   escolha opcaoMenuContinuar
+   caso 1
+      escolha opcaoMenuIniciar
+      caso 1
+        escreval(registraCliente)
+      caso 2
+        escreval(registraDestino)
+      outrocaso
+        //Não tem outro caso.
+      fimescolha
+   caso 2
       escreval(mostraMenu)
-   fimse
+   caso 3
+      escreval("Obrigado pela visita. Até logo!")
+   outrocaso
+      escreval("Opção inválida.")
+      escreval(menuContinuar)
+   fimescolha
 fimfuncao
+
 
 Inicio
 // Seção de Comandos, procedimento, funções, operadores, etc... 
-
    escreval("Seja bem vindo ao Walls Tour!")
    escreval(mostraMenu)
 
-
 Fimalgoritmo
-
-
-
