@@ -6,7 +6,7 @@ Algoritmo "Atividade-modulo-2"
 // Data atual  : 02/07/2022
 
 Var
-// Seção de Declarações das variáveis 
+// Seção de Declarações das variáveis
 opcaoMenuIniciar : inteiro
 numeroCliente: inteiro
 numeroDestino : inteiro
@@ -36,11 +36,9 @@ inicio
    caso 2
       escreval(registraDestino)
    caso 3
-      escreval("No momento indisponível.")
-      escreval(mostraMenu)
+      escreval(consultaAtual)
    caso 4
-      escreval("No momento indisponível.")
-      escreval(mostraMenu)
+      escreval(consultaAtual)
    caso 5
       escreval("Obrigado pela visita. Até logo!")
    outrocaso
@@ -133,7 +131,7 @@ funcao menuContinuar : caracter
 var
    opcaoMenuContinuar : inteiro
 inicio
-   escreval("O que você gostaria de fazer?")
+   escreval("O que você gostaria de fazer agora?")
    escreval()
    escolha opcaoMenuIniciar
    caso 1
@@ -143,7 +141,7 @@ inicio
    outrocaso
    //Não tem outro caso.
    fimescolha
-   
+
    escreval("Digite 2 para VOLTAR ao menu principal")
    escreval("Digite 3 para SAIR e fechar o programa")
    escreval()
@@ -170,10 +168,89 @@ inicio
    fimescolha
 fimfuncao
 
+funcao consultaAtual : inteiro
+var
+   idConsulta : inteiro
+   idNovaConsulta : inteiro
+inicio
+   escolha opcaoMenuIniciar
+      caso 3
+         escreval("Qual cliente você gostaria de consultar em nosso banco de dados?")
+         escreva("Por favor, digite o código do cliente:")
+         leia(idConsulta)
+         se (idConsulta > 0) e (idConsulta <= numeroCliente) entao
+            escreval()
+            escreval("Segue os dados do cliente desejado. ")
+            escreval("Nome do cliente: ", vCliente[idConsulta,2])
+            escreval("CPF: ", vCliente[idConsulta,3])
+            escreval("Data de nascimento: ", vCliente[idConsulta,4], "/", vCliente[idConsulta,5], "/", vCliente[idConsulta,6])
+            escreval()
+            escreval("O que deseja fazer agora?")
+            escreval()
+            escreval("Digite 1 para realizar NOVA CONSULTA")
+            escreval("Digite 2 para VOLTAR ao menu principal")
+            escreval("Digite 3 para SAIR e fechar o programa")
+            leia(idNovaConsulta)
+            escolha idNovaConsulta
+            caso 1
+               escreval(consultaAtual)
+            caso 2
+               escreval(mostraMenu)
+            caso 3
+               escreval("Obrigado pela visita. Até logo!")
+            outrocaso
+               escreval("Opção inválida.")
+               escreval(mostraMenu)
+            fimescolha
+         senao
+         escreval()
+         escreval("Opção inválida. Não encontramos nenhum registro desse código nessa seção do nosso banco de dados.")
+         escreval(mostraMenu)
+         fimse
+      caso 4
+         escreval("Qual destino você gostaria de consultar em nosso banco de dados?")
+         escreva("Por favor, digite o código do destino:")
+         leia(idConsulta)
+         se (idConsulta > 0) e (idConsulta <= numeroDestino) entao
+            escreval()
+            escreval("Segue os dados do destino solicitado. ")
+            escreval("Nome do destino: ", vDestino[idConsulta,2])
+            escreval("Cidade: ", vDestino[idConsulta,3])
+            escreval("Estado: ", vDestino[idConsulta,4])
+            escreval("Preço do pacote: ", vDestino[idConsulta,5])
+            escreval("Desconto: ", vDestino[idConsulta,6])
+            escreval("Diárias inclusas: ", vDestino[idConsulta,7])
+            escreval()
+            escreval("O que deseja fazer agora?")
+            escreval()
+            escreval("Digite 1 para realizar NOVA CONSULTA")
+            escreval("Digite 2 para VOLTAR ao menu principal")
+            escreval("Digite 3 para SAIR e fechar o programa")
+            leia(idNovaConsulta)
+            escolha idNovaConsulta
+            caso 1
+               escreval(consultaAtual)
+            caso 2
+               escreval(mostraMenu)
+            caso 3
+               escreval("Obrigado pela visita. Até logo!")
+            outrocaso
+               escreval("Opção inválida.")
+               escreval(mostraMenu)
+            fimescolha
+         senao
+         escreval()
+         escreval("Opção inválida. Não encontramos nenhum registro desse código nessa seção do nosso banco de dados.")
+         escreval(mostraMenu)
+         fimse
+   fimescolha
+fimfuncao
 
 Inicio
-// Seção de Comandos, procedimento, funções, operadores, etc... 
-   escreval("Seja bem vindo ao Walls Tour!")
+// Seção de Comandos, procedimento, funções, operadores, etc...
+   escreval("Seja bem vindo ao WALLZ TOUR!")
    escreval(mostraMenu)
+
+
 
 Fimalgoritmo
