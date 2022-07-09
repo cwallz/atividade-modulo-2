@@ -29,3 +29,22 @@ footer p {
     text-align: center;
     justify-content: center;
 }
+.titulo {
+    text-align: center
+}
+.card-destino span {
+    display: flex;
+    justify-content: center;
+    color:black;
+}
+.card-destino img {
+    width: 100%;
+}
+.card-destino {
+    border: solid 2px goldenrod;
+    padding: 10px;
+    margin-bottom: 24px;
+}
+.card-destino:hover {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
