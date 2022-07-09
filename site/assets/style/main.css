@@ -1,0 +1,31 @@
+header {
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+header img {
+    height: 96px;
+}
+.cor-de-fundo {
+    background-color: #026E81;
+}
+.cor-link {
+color:aliceblue;
+}
+.cor-link:hover {
+    color:aqua;
+    }
+.banner-principal {
+    width:100%;
+}
+.texto-conteudo h2 {
+    font-size: 18px;
+}
+.imagem-conteudo {
+    height: 100%;
+    width: 100%;
+}
+footer p {
+    text-align: center;
+    justify-content: center;
+}
