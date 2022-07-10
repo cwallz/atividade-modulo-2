@@ -28,7 +28,7 @@ color:aliceblue;
 footer p {
     text-align: center;
     justify-content: center;
-    margin-top: 1px;
+    font-size: 14px;
 }
 .titulo {
     text-align: center
@@ -48,4 +48,19 @@ footer p {
 }
 .card-destino:hover {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.card-destino2 img {
+    width: 100%;
+}
+.card-destino2 {
+    border: solid 3px goldenrod;
+    padding: 10px;
+    margin-bottom: 24px;
+}
+.pagamento img {
+    height: 40px;
+    
+}
+.pagamento {
+    margin-bottom: 24px;
 }
