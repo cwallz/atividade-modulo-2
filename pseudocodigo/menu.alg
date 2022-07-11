@@ -49,7 +49,7 @@ fimfuncao
 
 funcao registraCliente : caracter
 var
-// Dados do cliente
+   // Dados do cliente
    idCliente: inteiro
    nomeCliente : caracter
    cpfCliente : caracter
@@ -87,7 +87,7 @@ fimfuncao
 
 funcao registraDestino : caracter
 var
-// Dados do destino
+   // Dados do destino
    idDestino: inteiro
    nomeDestino : caracter
    cidadeDestino : caracter
@@ -135,11 +135,11 @@ inicio
    escreval()
    escolha opcaoMenuIniciar
    caso 1
-        escreval ("Digite 1 para registrar outro CLIENTE")
+      escreval ("Digite 1 para registrar outro CLIENTE")
    caso 2
-        escreval ("Digite 1 para registrar outro DESTINO")
+      escreval ("Digite 1 para registrar outro DESTINO")
    outrocaso
-   //Não tem outro caso.
+      //Não tem outro caso.
    fimescolha
 
    escreval("Digite 2 para VOLTAR ao menu principal")
@@ -152,11 +152,11 @@ inicio
    caso 1
       escolha opcaoMenuIniciar
       caso 1
-        escreval(registraCliente)
+         escreval(registraCliente)
       caso 2
-        escreval(registraDestino)
+         escreval(registraDestino)
       outrocaso
-        //Não tem outro caso.
+         //Não tem outro caso.
       fimescolha
    caso 2
       escreval(mostraMenu)
@@ -203,9 +203,9 @@ inicio
                escreval(mostraMenu)
             fimescolha
          senao
-         escreval()
-         escreval("Opção inválida. Não encontramos nenhum registro desse código nessa seção do nosso banco de dados.")
-         escreval(mostraMenu)
+            escreval()
+            escreval("Opção inválida. Não encontramos nenhum registro desse código nessa seção do nosso banco de dados.")
+            escreval(mostraMenu)
          fimse
       caso 4
          escreval("Qual destino você gostaria de consultar em nosso banco de dados?")
@@ -239,18 +239,15 @@ inicio
                escreval(mostraMenu)
             fimescolha
          senao
-         escreval()
-         escreval("Opção inválida. Não encontramos nenhum registro desse código nessa seção do nosso banco de dados.")
-         escreval(mostraMenu)
+            escreval()
+            escreval("Opção inválida. Não encontramos nenhum registro desse código nessa seção do nosso banco de dados.")
+            escreval(mostraMenu)
          fimse
    fimescolha
 fimfuncao
 
 Inicio
-// Seção de Comandos, procedimento, funções, operadores, etc...
+   // Seção de Comandos, procedimento, funções, operadores, etc...
    escreval("Seja bem vindo ao WALLZ TOUR!")
    escreval(mostraMenu)
-
-
-
 Fimalgoritmo
